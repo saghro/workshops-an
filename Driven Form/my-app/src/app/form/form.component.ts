@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-form',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
+  user: User | undefined;
 
+  ngOnInit(): void {
+    this.user = new User();
+  }
 }
+
