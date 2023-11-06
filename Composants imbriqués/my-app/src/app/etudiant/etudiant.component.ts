@@ -1,4 +1,5 @@
-import { Component ,OnInit } from '@angular/core';
+
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-etudiant',
@@ -6,9 +7,14 @@ import { Component ,OnInit } from '@angular/core';
   styleUrls: ['./etudiant.component.css']
 })
 export class EtudiantComponent implements OnInit {
-    questionE : string='';  
-    constructor(){}
-    ngOnInit(): void {
-        
-    }
+  @Input() questionE: string = ''; 
+  @Output () reponsefinal = new EventEmitter <string>();
+   reponseE : string= '';
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  envoiReponse(){
+    this.reponsefinal.emit(this.questionE)
+  }
 }
