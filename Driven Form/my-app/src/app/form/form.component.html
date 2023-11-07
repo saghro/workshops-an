@@ -1,18 +1,29 @@
 <div class="container">
-    <h1>SignUp Form</h1>
-  <form #f="ngForm">
+   <h1>SignUp Form</h1>
+   <form #f="ngForm">
      <div class="form-group">
-        <label> Name :</label>
-        <input type="text" name="name" class="form-control" required ngModel > 
+       <label for="name">Name:</label>
+       <input type="text" name="name" class="form-control" required ngModel #l="ngModel" >
+      </div>
+      <div class="alert alert-danger" *ngIf="l.invalid && l.touched">
+          the name is a required field
+      </div>
+      <div class="form-group">
+         <label> Email :</label>
+         <input type="email" name="email" class="form-control" required >
+         ngModel #e="ngModel" pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z]{2,4}">
+      </div>
+      <div class="alert alert-danger" *ngIf="e.invalid && e.touched">
+         <div *ngIf="e.required">the email is a required field</div>
+         <div *ngIf="e.pattern">the email doesn't seem field</div>
      </div>
-     <div class="form-group">
-        <label> Email :</label>
-        <input type="text" name="email" class="form-control" ngModel>
+      <div class="form-group">
+         <label> Password :</label>
+         <input type="password" name="password" class="form-control" required ngModel #p="ngModel">
+      </div>
+      <div class="alert alert-danger" *ngIf="p.invalid && p.touched">
+         the password is a required field
      </div>
-     <div class="form-group">
-        <label> Password :</label>
-        <input type="password" name="password" class="form-control" ngModel>
-     </div>
-  </form>
-  <button class="btn btn-primary" [disabled]="f.invalid">s'inscrire</button>
+   </form>
+   <button class="btn btn-primary" [disabled]="f.invalid">s'inscrire</button>
 </div>
