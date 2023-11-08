@@ -5,7 +5,7 @@ ul{
     flex-wrap: wrap;
     list-style-type: none;
     padding: 0;
-}
+} 
 ul li a{
     height: 20rem;
     width: 20rem;
@@ -17,4 +17,8 @@ ul li a{
     overflow: hidden;
     color: #e72929;
 
+}
+a:hover{
+    opacity: 0.9;
+    cursor: pointer;
 }

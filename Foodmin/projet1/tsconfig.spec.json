@@ -5,12 +5,10 @@
     "outDir": "./out-tsc/spec",
     "types": [
       "jasmine"
-    ],
-    "enableIvy": true
+    ]
   },
   "include": [
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
   ]
-  
 }
